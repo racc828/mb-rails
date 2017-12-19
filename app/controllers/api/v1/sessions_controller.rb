@@ -7,7 +7,8 @@ class Api::V1::SessionsController < ApplicationController
       id: current_user.id,
       firstname: current_user.firstname,
       email: current_user.email,
-      admin: current_user.admin
+      admin: current_user.admin,
+      department: current_user.department
     }
   end
 
@@ -18,6 +19,7 @@ class Api::V1::SessionsController < ApplicationController
         id: user.id,
         firstname: user.firstname,
         email: user.email,
+        department: user.department,
         admin: user.admin,
         jwt: JWT.encode({id: user.id}, "mbrails")
       }

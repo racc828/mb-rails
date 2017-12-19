@@ -18,6 +18,7 @@ class Api::V1::UsersController < ApplicationController
         firstname: newUser.firstname,
         email: newUser.email,
         admin: newUser.admin,
+        department: newUser.department,
         jwt: JWT.encode({id: newUser.id}, "mbrails")
       }
     end
@@ -38,7 +39,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:firstname, :email, :password, :admin)
+    params.require(:user).permit(:firstname, :email, :password, :admin, :department)
   end
 
 end
