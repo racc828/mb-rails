@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20171218234049) do
 
   create_table "departmentdata", force: :cascade do |t|
     t.string "description"
+    t.integer "user_id"
+    t.string "department"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
